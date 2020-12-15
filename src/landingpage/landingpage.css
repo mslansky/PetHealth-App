@@ -1,5 +1,5 @@
 .App-header{
-  background-color: #F4F3EE;
+  background-color: #413C3A;
 }
 
 ul {
@@ -7,7 +7,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #413C3A;
 }
 
 li {
@@ -27,7 +27,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #413C3A;
+  background-color: #333;
 }
 
 .intro-picture{
@@ -54,15 +54,15 @@ img{
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: large; 
-  color: #333;
+  color: #F4F3EE;
 }
 
 .flex{
   opacity: 1;
   display: flex;
   flex-direction: row;
-  padding:0;
   margin:0;
+
 }
 
 .pictures{
@@ -72,8 +72,9 @@ img{
   height: 20vh;
   align-items: center;
   position: relative;
- 
+  
 }
+
 
 
 
