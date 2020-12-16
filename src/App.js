@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './landingpage/landingpage.js'
-import Profile from './profilepage/profilepage.js'
+import Profilepage from './profilepage/profilepage.js'
+import Datapage from './datapage/datapage.js'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 function App() {
@@ -19,9 +20,12 @@ function App() {
           </Route>
           
           <Route path="/profilepage">
-            <Profile />
+            <Profilepage />
           </Route>
-
+          
+          <Route path="/datapage">
+            <Datapage />
+          </Route>
         
 
         </Switch>
