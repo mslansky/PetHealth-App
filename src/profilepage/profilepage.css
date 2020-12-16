@@ -16,7 +16,7 @@
 }
 
 .btn-one {
-  color: #FFF;
+  color: #FFF !important;
   transition: all 0.3s;
   position: relative;
   margin-top: 15px;
@@ -41,8 +41,8 @@
   border-bottom-width: 1px;
   border-top-style: solid;
   border-bottom-style: solid;
-  border-top-color: rgba(255,255,255,0.5);
-  border-bottom-color: rgba(255,255,255,0.5);
+  border-top-color: rgba(255,255,255,0.5) !important;
+  border-bottom-color: rgba(255,255,255,0.5) !important;
   transform: scale(0.1, 1);
 }
 
@@ -62,7 +62,7 @@
   height: 100%;
   z-index: 1;
   transition: all 0.3s;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.1) !important;
 }
 .btn-one:hover::after {
   opacity: 0; 
