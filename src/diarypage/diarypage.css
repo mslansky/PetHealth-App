@@ -13,16 +13,42 @@
   height: 20vh;
   align-items: center;
   position: relative;
-  
+  margin-bottom:20px;
+}
+
+.diary-card{
+  margin:10px;
+  padding:10px;
+  background-color: rgba(70, 63, 58,.7);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.card-body{
+  padding:5px;
+  background-color:#F4F3EE;
+  border-radius: 8px;
 }
 
 
+a{
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  color:#CD7D65;
+  border-top-color: rgba(70, 63, 58, 0.5);
+  border-bottom-color: rgba(70, 63, 58, 0.5);
+}
 
-
-
-
-
-
+button{
+  margin-left:15px;
+  background-color: #463F3A;
+  border:solid;
+  color:#FFFFFF;
+  font-family: 'Poppins', sans-serif;
+}
 
 
 
