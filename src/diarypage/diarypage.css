@@ -1,0 +1,47 @@
+.flex{
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  margin:0;
+
+}
+
+.pictures{
+  display: flex;
+  flex-direction: row;
+  width:35%;
+  height: 20vh;
+  align-items: center;
+  position: relative;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 600px) {
+  
+  .intro-picture{
+    margin:0;
+    height: 1000pv;
+    width: 1000pv;
+  }
+
+  .pictures{
+    display: flex;
+    flex-direction: row;
+    width:35%;
+    height: 40vh;
+  }
+  
+}
