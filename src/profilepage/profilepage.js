@@ -3,9 +3,9 @@ import Createprofile from './createprofile';
 import './profilepage.css';
 
 
-
 export default class Profilepage extends React.Component{
   constructor(props) {
+    console.log(props)
     super(props);
     this.state = {isToggleOn: false};
     this.handleClick = this.handleClick.bind(this);
@@ -28,6 +28,11 @@ export default class Profilepage extends React.Component{
           </div>
           </div>
           {this.state.isToggleOn ? <Createprofile/> : ''}
+
+
+          <container className="profile-list">
+          {this.props.profiles}
+          </container>
 
       </div>   
     );

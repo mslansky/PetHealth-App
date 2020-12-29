@@ -1,5 +1,4 @@
 import React from 'react'
-import ProfileForm from './profileform';
 import './createprofile.css';
 import config from '../config';
 import ApiContext from '../ApiContext';
@@ -7,6 +6,13 @@ import ApiContext from '../ApiContext';
 
 
 export default class Createprofile extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   static defaultProps = {
     history: {
       push: () => { }
@@ -14,10 +20,14 @@ export default class Createprofile extends React.Component{
   }
   static contextType = ApiContext;
 
+  handleChange(evt) {
+    this.setState({value: evt.target.value});
+  }
+
   handleSubmit = e => {
     e.preventDefault()
     const profile = {
-      name: e.target['profile-name'].value
+      name: this.state.value
     }
 
     fetch(`${config.API_ENDPOINT}/profiles`, {
@@ -40,29 +50,27 @@ export default class Createprofile extends React.Component{
       .catch(error => {
         console.error({ error })
       })
+
   }
 
   render(){
   return(
       <div className="add-profile">
       <section className='AddProfile'>
-        <ProfileForm onSubmit={this.handleSubmit}>
         <div className='field'>
           <label htmlFor='profile-name-input'>
             Pet Name:
           </label>
-        <input type='text' id='profile-name-input' name='profile-name' />
+        <input type='text' id='profile-name-input' name='profile-name' value={this.state.value} onChange={this.handleChange} /> 
         </div>
     
         <div className='buttons'>
         <div class="box-1">
-          <div class="btn btn-one">
+          <div class="btn btn-one" onClick={this.handleSubmit}>
             <span>SAVE PROFILE</span>
-          </div>
-          </div>
         </div>
-
-        </ProfileForm>
+          </div>
+            </div>
 
       </section>
       </div>

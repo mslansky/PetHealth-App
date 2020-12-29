@@ -31,6 +31,7 @@ export default class App extends React.Component{
         ])
       })
       .then(([diaries, profiles]) => {
+        console.log(profiles)
         this.setState({ diaries, profiles })
       })
       .catch(error => {
@@ -79,7 +80,7 @@ export default class App extends React.Component{
           </Route>
           
           <Route path="/profilepage">
-            <Profilepage />
+            <Profilepage profiles={this.state.profiles}/>
           </Route>
           
           <Route path="/datapage">
