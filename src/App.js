@@ -1,15 +1,18 @@
+import React from 'react';
 import './App.css';
 import Navbar from './landingpage/landingpage.js'
 import Profilepage from './profilepage/profilepage.js'
 import Datapage from './datapage/datapage.js'
 import Diarypage from './diarypage/diarypage.js'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import config from './config';
 
-function App() {
+
+export default class App extends React.Component{
   state = {
     profiles: [],
     diaries: [],
-  };
+  }
 
   componentDidMount() {
     Promise.all([
@@ -59,7 +62,7 @@ function App() {
     })
   }
 
-
+  render(){
 
   return (
     <div className="App">
@@ -92,6 +95,6 @@ function App() {
     
     </div>
   );
+  }
 }
 
-export default App;

@@ -24,7 +24,7 @@ export default class Diarypage extends React.Component{
               </p>
               </div>
               <div class="card-action">
-              <a href="#">OPEN DIARY PAGE</a>
+              <span>OPEN DIARY PAGE</span>
               <button>Delete</button>
             </div>
           </div>
