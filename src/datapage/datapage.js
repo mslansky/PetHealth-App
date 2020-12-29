@@ -1,5 +1,7 @@
 import React from 'react';
 import './datapage.css';
+import config from '../config';
+import ApiContext from '../ApiContext';
 
 
 export default class Datapage extends React.Component{
@@ -15,41 +17,84 @@ export default class Datapage extends React.Component{
     this.toggleOther = this.toggleOther.bind(this);
   }
 
-  toggleMedication = ()=>{
-    this.setState({
-      medication: !this.state.medication
-    })
-}
+    toggleMedication = ()=>{
+      this.setState({
+        medication: !this.state.medication
+      })
+  }
 
-toggleWeight = ()=>{
-  this.setState({
-   weight: !this.state.weight
-  })
-}
+    toggleWeight = ()=>{
+      this.setState({
+      weight: !this.state.weight
+      })
+    }
 
-toggleDiet = ()=>{
-  this.setState({
-   diet: !this.state.diet
-  })
-}
+    toggleDiet = ()=>{
+      this.setState({
+      diet: !this.state.diet
+      })
+    }
 
-toggleAllergies = ()=>{
-  this.setState({
-  allergies: !this.state.allergies
-  })
-}
+    toggleAllergies = ()=>{
+      this.setState({
+      allergies: !this.state.allergies
+      })
+    }
 
-toggleBody= ()=>{
-  this.setState({
-  body: !this.state.body
-  })
-}
+    toggleBody= ()=>{
+      this.setState({
+      body: !this.state.body
+      })
+    }
 
-toggleOther= ()=>{
-  this.setState({
-  other: !this.state.other
-  })
-}
+    toggleOther= ()=>{
+      this.setState({
+      other: !this.state.other
+      })
+    }
+
+
+    // add diary
+    static defaultProps = {
+      history: {
+        push: () => { }
+      },
+    }
+    static contextType = ApiContext;
+
+    handleSubmit = e => {
+      e.preventDefault()
+      const newDiary = {
+        medication: e.target['text-medication'].value,
+        weight: e.target['text-weight'].value,
+        diet: e.target['text-diet'].value,
+        allergies: e.target['text-allergies'].value,
+        body: e.target['text-body'].value,
+        other: e.target['text-other'].value,
+      }
+      fetch(`${config.API_ENDPOINT}/diaries`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${config.API_TOKEN}`
+        },
+        body: JSON.stringify(newDiary),
+      })
+        .then(res => {
+          if (!res.ok)
+            return res.json().then(e => Promise.reject(e))
+          return res.json()
+        })
+        .then(diary => {
+          this.context.addDiary(diary)
+          this.props.history.push(`/profile/${diary.id}`)
+        })
+        .catch(error => {
+          console.error({ error })
+        })
+    }
+
+
 
 
   render(){
