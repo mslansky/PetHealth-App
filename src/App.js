@@ -48,6 +48,12 @@ export default class App extends React.Component{
     })
   }
 
+  handleDeleteProfile = profileid => {
+    this.setState({
+      profiles: this.state.profiles.filter(profile => profile.id !== profileid)
+    })
+  }
+
   handleAddDiary = diary => {
     this.setState({
       diaries: [

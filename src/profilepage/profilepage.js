@@ -41,6 +41,39 @@ export default class Profilepage extends React.Component{
     }));
   }
   
+
+  static defaultProps ={
+    onDeleteProfile: () => {},
+  }
+  static contextType = ApiContext;
+
+  handleClickDelete = e => {
+    e.preventDefault()
+    const profileid = e.target.getAttribute('profile-id');
+
+    fetch(`${config.API_ENDPOINT}/profiles/${profileid}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${config.API_TOKEN}`
+      },
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      .then(() => {
+        this.context.deleteProfile(profileid)
+        this.props.onDeleteProfile(profileid)
+        this.fetchProfile()
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+  }
+
+
   render(){
     return(
 
@@ -64,7 +97,7 @@ export default class Profilepage extends React.Component{
             <button className="enter-button">
               <Link to="/datapage">Create New Diary</Link>
             </button>
-            <button className="delete-profile"> Delete Pet Profile</button>
+            <button className="delete-profile" profile-id={profiles.id} onClick={this.handleClickDelete}> Delete Pet Profile</button>
             </div>
           ))}
           </container>
