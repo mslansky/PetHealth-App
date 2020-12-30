@@ -69,12 +69,21 @@
   transform: scale(0.1, 1);
 }
 
+
+
 .profile-list{
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin:10px;
   margin-right: 70px;
+}
+
+
+.paw{
+  position: relative;
+  width:20px;
+  opacity:.6;
 }
 
 .profile-bubble{
@@ -136,6 +145,8 @@ a{
     height: 400px;
     width:100% ;
   }
+
+  
 }
 
 

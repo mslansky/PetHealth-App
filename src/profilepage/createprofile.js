@@ -50,7 +50,7 @@ export default class Createprofile extends React.Component{
       .catch(error => {
         console.error({ error })
       })
-
+      this.setState({value: ''})
   }
 
   render(){

@@ -55,9 +55,12 @@ export default class Profilepage extends React.Component{
           {this.state.isToggleOn ? <Createprofile fetchProfile={this.fetchProfile}/> : ''}
 
 
+          
           <container className="profile-list">
-          {this.state.profiles.map((profiles, index) => (
-            <div className="profile-bubble"><p>{profiles.name}</p>
+          {this.state.profiles.reverse().map((profiles, index) => (
+            <div className="profile-bubble">
+              <img className="paw" src="https://img.icons8.com/ios-filled/50/000000/cat-footprint.png" alt="small paw print icon"/>
+            <p>{profiles.name}</p>
             <button className="enter-button">
               <Link to="/datapage">Create New Diary</Link>
             </button>
@@ -65,6 +68,7 @@ export default class Profilepage extends React.Component{
             </div>
           ))}
           </container>
+       
 
       </div>   
     );
