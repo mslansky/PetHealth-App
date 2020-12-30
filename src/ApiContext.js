@@ -5,5 +5,5 @@ export default React.createContext({
   profiles: [],
   addProfile: () => {},
   addDiary: () => {},
-  deleteDiary: () => {},
+  deleteDiary: () => {}
 })

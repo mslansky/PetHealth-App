@@ -80,7 +80,7 @@ export default class App extends React.Component{
           </Route>
           
           <Route path="/profilepage">
-            <Profilepage profiles={this.state.profiles}/>
+            <Profilepage/>
           </Route>
           
           <Route path="/datapage">

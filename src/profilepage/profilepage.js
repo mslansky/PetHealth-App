@@ -1,18 +1,25 @@
 import React from 'react';
 import Createprofile from './createprofile';
-import config from '../config';
 import './profilepage.css';
+import config from '../config';
+import ApiContext from '../ApiContext';
 
 
 export default class Profilepage extends React.Component{
   constructor(props) {
     console.log(props)
     super(props);
-    this.state = {isToggleOn: false};
+    this.state = {isToggleOn: false, profiles: []};
     this.handleClick = this.handleClick.bind(this);
+    this.fetchProfile = this.fetchProfile.bind(this);
   }
+  static contextType = ApiContext;
 
   componentDidMount(){
+    this.fetchProfile();
+  }
+
+  fetchProfile() {
     fetch(`${config.API_ENDPOINT}/profiles`, { headers: {'Authorization': `Bearer ${config.API_TOKEN}`}})
     .then(response => {
       if(!response.ok)
@@ -27,7 +34,7 @@ export default class Profilepage extends React.Component{
   }
 
 
-  handleClick() { console.log(this.state.isToggleOn)
+  handleClick() {
     this.setState(state => ({
       isToggleOn: !this.state.isToggleOn
     }));
@@ -44,12 +51,15 @@ export default class Profilepage extends React.Component{
             <span>CREATE PET PROFILE</span>
           </div>
           </div>
-          {this.state.isToggleOn ? <Createprofile/> : ''}
+          {this.state.isToggleOn ? <Createprofile fetchProfile={this.fetchProfile}/> : ''}
 
 
           <container className="profile-list">
           {this.state.profiles.map((profiles, index) => (
-            <p>{profiles.name}</p>
+            <div className="profile-bubble"><p>{profiles.name}</p>
+            <button className="enter-button"> Enter Pet Diary</button>
+            <button className="delete-profile"> Delete Pet Profile</button>
+            </div>
           ))}
           </container>
 

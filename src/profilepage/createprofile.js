@@ -44,7 +44,7 @@ export default class Createprofile extends React.Component{
         return res.json()
       })
       .then(profile => {
-        this.context.addProfile(profile)
+        this.props.fetchProfile();
         this.props.history.push(`/profiles/${profile.id}`)
       })
       .catch(error => {

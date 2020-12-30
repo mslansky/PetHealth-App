@@ -69,19 +69,59 @@
   transform: scale(0.1, 1);
 }
 
-
 .profile-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:10px;
+  margin-right: 70px;
+}
+
+.profile-bubble{
+  justify-content: center;
+  display: flex;
   background-color: white;
-  color: darkgrey;
-  margin:5px;
+  color: #413C3A;
+  margin:20px;
+  margin-bottom:15px;
   border-radius:8px;
   padding: 5px;
+  padding-left:10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: large;
+  font-weight: 400;
+  width: 100%
+}
+
+.enter-button{
+background-color: #CD7D65;
+border-radius:24px;
+border-color: darkgrey;
+}
+
+.delete-profile{
+  border-radius:24px;
+  border-color:#CD7D65; 
 }
 
 
-
-
 @media all and (min-width: 600px) {
+  .backdrop-cat{
+    height: 400px;
+    width:100% ;
+  }
+
+  .profile-bubble{
+    padding: 5px;
+    padding-left:10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+    font-weight: 400;
+    width: 50%
+  }
+}
+
+@media all and (min-width: 800px) {
 
   .backdrop-cat{
     height: 400px;
@@ -89,10 +129,4 @@
   }
 }
 
-@media all and (min-width: 800px) {
 
-  .backdrop-cat{
-    height: 600px;
-    width:100% ;
-  }
-}
