@@ -19,6 +19,7 @@ export default class Profilepage extends React.Component{
         return response.json().then(e => Promise.reject(e))
       return response.json()
     }).then(profilesJson => {
+      console.log(profilesJson)
       this.setState(state => ({
         profiles: profilesJson
       }))
@@ -47,7 +48,9 @@ export default class Profilepage extends React.Component{
 
 
           <container className="profile-list">
-          {this.state.profiles}
+          {this.state.profiles.map((profiles, index) => (
+            <p>{profiles.name}</p>
+          ))}
           </container>
 
       </div>   
