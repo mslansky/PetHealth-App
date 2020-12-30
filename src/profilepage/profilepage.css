@@ -70,6 +70,16 @@
 }
 
 
+.profile-list{
+  background-color: white;
+  color: darkgrey;
+  margin:5px;
+  border-radius:8px;
+  padding: 5px;
+}
+
+
+
 
 @media all and (min-width: 600px) {
 

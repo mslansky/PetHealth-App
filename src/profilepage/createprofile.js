@@ -65,8 +65,8 @@ export default class Createprofile extends React.Component{
         </div>
     
         <div className='buttons'>
-        <div class="box-1">
-          <div class="btn btn-one" onClick={this.handleSubmit}>
+        <div className="box-1">
+          <div className="btn btn-one" onClick={this.handleSubmit}>
             <span>SAVE PROFILE</span>
         </div>
           </div>
@@ -74,7 +74,6 @@ export default class Createprofile extends React.Component{
 
       </section>
       </div>
-
 
     );
   }
