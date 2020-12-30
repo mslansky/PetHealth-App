@@ -1,5 +1,6 @@
 import React from 'react';
 import Createprofile from './createprofile';
+import config from '../config';
 import './profilepage.css';
 
 
@@ -10,6 +11,21 @@ export default class Profilepage extends React.Component{
     this.state = {isToggleOn: false};
     this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidMount(){
+    fetch(`${config.API_ENDPOINT}/profiles`, { headers: {'Authorization': `Bearer ${config.API_TOKEN}`}})
+    .then(response => {
+      if(!response.ok)
+        return response.json().then(e => Promise.reject(e))
+      return response.json()
+    }).then(profilesJson => {
+      this.setState(state => ({
+        profiles: profilesJson
+      }))
+    })
+  }
+
+
   handleClick() { console.log(this.state.isToggleOn)
     this.setState(state => ({
       isToggleOn: !this.state.isToggleOn
@@ -31,7 +47,7 @@ export default class Profilepage extends React.Component{
 
 
           <container className="profile-list">
-          {this.props.profiles}
+          {this.state.profiles}
           </container>
 
       </div>   
