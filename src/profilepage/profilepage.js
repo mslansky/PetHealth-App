@@ -3,6 +3,7 @@ import Createprofile from './createprofile';
 import './profilepage.css';
 import config from '../config';
 import ApiContext from '../ApiContext';
+import {Link} from "react-router-dom";
 
 
 export default class Profilepage extends React.Component{
@@ -57,7 +58,9 @@ export default class Profilepage extends React.Component{
           <container className="profile-list">
           {this.state.profiles.map((profiles, index) => (
             <div className="profile-bubble"><p>{profiles.name}</p>
-            <button className="enter-button"> Enter Pet Diary</button>
+            <button className="enter-button">
+              <Link to="/datapage">Create New Diary</Link>
+            </button>
             <button className="delete-profile"> Delete Pet Profile</button>
             </div>
           ))}

@@ -93,15 +93,24 @@
   width: 100%
 }
 
+a{
+  color:white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
 .enter-button{
-background-color: #CD7D65;
-border-radius:24px;
-border-color: darkgrey;
+  color:white;
+  background-color: #CD7D65;
+  border-radius:24px;
+  border-color: darkgrey;
+  font-family: 'Poppins', sans-serif;
 }
 
 .delete-profile{
   border-radius:24px;
   border-color:#CD7D65; 
+  font-family: 'Poppins', sans-serif;
 }
 
 
