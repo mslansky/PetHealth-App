@@ -7,14 +7,17 @@ import ApiContext from '../ApiContext';
 export default class Datapage extends React.Component{
   constructor(props) {
     super(props);
+    
     this.state = {togglemedication: false, toggleweight:false, togglediet:false, toggleallergies:false, togglebody:false, toggleother:false,
-    diarydate:'', medication:'', weight:'', diet:'', allergies:'', body:'', other:''};
+    diarydate:"", medication:"", weight:"", diet:"", allergies:"", body:"", other:""};
+
     this.toggleMedication = this.toggleMedication.bind(this);
     this.toggleWeight = this.toggleWeight.bind(this);
     this.toggleDiet = this.toggleDiet.bind(this);
     this.toggleAllergies = this.toggleAllergies.bind(this);
     this.toggleBody = this.toggleBody.bind(this);
     this.toggleOther = this.toggleOther.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.handleChangeDate = this.handleChangeDate.bind(this);
@@ -137,7 +140,7 @@ export default class Datapage extends React.Component{
     return(
       <div className="datapage">
 
-        <h1>NAME HERE</h1>
+        <h1>{this.props.profiles}</h1>
 
         <div className="data-inputs">
        
