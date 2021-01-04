@@ -95,7 +95,7 @@ export default class Profilepage extends React.Component{
               <img className="paw" src="https://img.icons8.com/ios-filled/50/000000/cat-footprint.png" alt="small paw print icon"/>
             <p>{profiles.name}</p>
             <button className="enter-button">
-              <Link to="/datapage">Create New Diary</Link>
+              <Link to={`/datapage/${profiles.name}`}>Create New Diary</Link>
             </button>
             <button className="delete-profile" profile-id={profiles.id} onClick={this.handleClickDelete}> Delete Pet Profile</button>
             </div>

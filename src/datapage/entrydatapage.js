@@ -4,11 +4,11 @@ import config from '../config';
 import ApiContext from '../ApiContext';
 
 
-export default class Datapage extends React.Component{
+export default class EntryDatapage extends React.Component{
   constructor(props) {
     super(props);
-    const { petname } = this.props.match.params
-    this.petname = petname;
+    const { diaryid } = this.props.match.params
+    this.diaryid = diaryid;
     
     this.state = {togglemedication: false, toggleweight:false, togglediet:false, toggleallergies:false, togglebody:false, toggleother:false,
     diarydate:"", medication:"", weight:"", diet:"", allergies:"", body:"", other:""};
@@ -30,6 +30,34 @@ export default class Datapage extends React.Component{
     this.handleChangeBody = this.handleChangeBody.bind(this);
     this.handleChangeOther = this.handleChangeOther.bind(this);
   }
+
+  componentDidMount(){
+    this.fetchDiary()
+  }
+  
+  fetchDiary(){
+    console.log(this.diaryid)
+    fetch(`${config.API_ENDPOINT}/diaries/${this.diaryid}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${config.API_TOKEN}`
+      }
+      })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      .then(diary => {
+        this.setState(diary)
+        
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+    
+    }
 
     toggleMedication = ()=>{
       this.setState({

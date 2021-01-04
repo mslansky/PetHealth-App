@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './landingpage/landingpage.js'
 import Profilepage from './profilepage/profilepage.js'
 import Datapage from './datapage/datapage.js'
+import EntryDatapage from './datapage/entrydatapage.js'
 import Diarypage from './diarypage/diarypage.js'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import config from './config';
@@ -88,14 +89,19 @@ export default class App extends React.Component{
           <Route path="/profilepage">
             <Profilepage/>
           </Route>
+      
+          <Route path='/datapage/entry/:diaryid'
+          component= {EntryDatapage}
+        />
+    
+        <Route path='/datapage/:petname'
+          component= {Datapage}
+        />
+
+        <Route path='/diarypage/:petname'
+          component= {Diarypage}
+        />
           
-          <Route path="/datapage">
-            <Datapage />
-          </Route>
-        
-          <Route path="/diarypage">
-            <Diarypage />
-          </Route>
 
         </Switch>
       </Router>
