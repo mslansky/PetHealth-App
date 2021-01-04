@@ -94,10 +94,13 @@ export default class Profilepage extends React.Component{
             <div className="profile-bubble">
               <img className="paw" src="https://img.icons8.com/ios-filled/50/000000/cat-footprint.png" alt="small paw print icon"/>
             <p>{profiles.name}</p>
+            <div className="three">
             <button className="enter-button">
               <Link to={`/datapage/${profiles.name}`}>Create New Diary</Link>
             </button>
             <button className="delete-profile" profile-id={profiles.id} onClick={this.handleClickDelete}> Delete Pet Profile</button>
+            <button className="all-diaries"><Link to={`/diarypage/${profiles.name}`}>View All Diaries</Link></button>
+            </div>
             </div>
           ))}
           </container>

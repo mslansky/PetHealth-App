@@ -77,6 +77,10 @@ export default class Diarypage extends React.Component{
       <img className="pictures" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="corgi and brown dog running"/>
       </div>
 
+      <button><Link to={`/profilepage`}>Back to Pet Profiles</Link></button>
+
+
+
       {this.state.diaries.map((diaries, index) => (
       <div className="diary-card">
         <div className="card">

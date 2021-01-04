@@ -122,6 +122,13 @@ a{
   font-family: 'Poppins', sans-serif;
 }
 
+.all-diaries{
+  background-color: darkgrey;
+  border-radius:24px;
+  border-color: #413C3A;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 @media all and (min-width: 600px) {
   .backdrop-cat{

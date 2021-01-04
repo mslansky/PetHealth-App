@@ -2,7 +2,7 @@ import React from 'react';
 import './datapage.css';
 import config from '../config';
 import ApiContext from '../ApiContext';
-
+import {Link} from "react-router-dom";
 
 export default class EntryDatapage extends React.Component{
   constructor(props) {
@@ -33,6 +33,7 @@ export default class EntryDatapage extends React.Component{
 
   componentDidMount(){
     this.fetchDiary()
+    
   }
   
   fetchDiary(){
@@ -50,8 +51,8 @@ export default class EntryDatapage extends React.Component{
         return res.json()
       })
       .then(diary => {
-        this.setState(diary)
-        
+        if(diary[0])
+          this.setState(diary[0]) 
       })
       .catch(error => {
         console.error({ error })
@@ -135,9 +136,11 @@ export default class EntryDatapage extends React.Component{
     }
 
     handleSubmit = e => {
+      console.log(this.state)
       e.preventDefault()
       const newDiary = {
-        name: this.petname,
+        id: this.state.id,
+        name: this.state.name,
         diarydate: this.state.diarydate,
         medication: this.state.medication,
         weight: this.state.weight,
@@ -147,7 +150,7 @@ export default class EntryDatapage extends React.Component{
         other: this.state.other,
       }
 
-      fetch(`${config.API_ENDPOINT}/diaries`, {
+      fetch(`${config.API_ENDPOINT}/diaries/${this.diaryid}`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -161,8 +164,7 @@ export default class EntryDatapage extends React.Component{
           return res.json()
         })
         .then(diaries => {
-          this.context.addDiary(newDiary)
-          this.props.history.push(`/diarypage/${this.petname}`)
+          this.props.history.push(`/diarypage/${this.state.name}`)
         })
         .catch(error => {
           console.error({ error })
@@ -247,11 +249,19 @@ export default class EntryDatapage extends React.Component{
 
         <div className="box-1">
         <div className="btn btn-one" onClick={this.handleSubmit}>
-        <span>SAVE DIARY ENTRY</span>
+        <span>UPDATE DIARY ENTRY</span>
         </div>
         </div>
 
+        <Link to={`/diarypage/${this.state.name}`}>
+        <div className="box-1">
+        <div className="btn btn-one">
+        <span>BACK TO DIARIES PAGE</span>
+        </div>
+        </div>
+        </Link>
+        
       </div>
     );
-  }
+  }      
 }

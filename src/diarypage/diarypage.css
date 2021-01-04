@@ -29,15 +29,19 @@
   padding:5px;
   background-color:#F4F3EE;
   border-radius: 8px;
+  color:#463f3a;
 }
 
+.diary-edit a{
+  color:#CD7D65 !important;
+}
 
 .diary-edit{
   font-family: 'Poppins', sans-serif;
   text-decoration: none;
   border-top-style: solid;
   border-bottom-style: solid;
-  color:#CD7D65;
+  color:#CD7D65 !important;
   border-top-color: rgba(70, 63, 58, 0.5);
   border-bottom-color: rgba(70, 63, 58, 0.5);
 }
