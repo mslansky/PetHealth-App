@@ -8,7 +8,6 @@ import {Link} from "react-router-dom";
 
 export default class Profilepage extends React.Component{
   constructor(props) {
-    console.log(props)
     super(props);
     this.state = {isToggleOn: false, profiles: []};
     this.handleClick = this.handleClick.bind(this);
@@ -80,8 +79,8 @@ export default class Profilepage extends React.Component{
       <div className="profile-add">
           <img className="backdrop-cat" src="https://images.unsplash.com/photo-1507150823660-eed1895c23c7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="cat with treat"/>
           
-          <div class="box-1">
-          <div class="btn btn-one" onClick={this.handleClick}>
+          <div className="box-1">
+          <div className="btn btn-one" onClick={this.handleClick}>
             <span>CREATE PET PROFILE</span>
           </div>
           </div>
@@ -89,7 +88,7 @@ export default class Profilepage extends React.Component{
 
 
           
-          <container className="profile-list">
+          <div className="profile-list">
           {this.state.profiles.reverse().map((profiles, index) => (
             <div className="profile-bubble">
               <img className="paw" src="https://img.icons8.com/ios-filled/50/000000/cat-footprint.png" alt="small paw print icon"/>
@@ -103,7 +102,7 @@ export default class Profilepage extends React.Component{
             </div>
             </div>
           ))}
-          </container>
+          </div>
        
 
       </div>   

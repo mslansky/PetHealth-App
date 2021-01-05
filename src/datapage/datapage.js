@@ -151,7 +151,7 @@ export default class Datapage extends React.Component{
         <div className="data-inputs">
        
         <div className="input-val-cal">
-        <label for="diarydate">Today's Date: </label>
+        <label htmlFor="diarydate">Today's Date: </label>
         <input type="date" id="diarydate" name="diarydate" onChange={this.handleChangeDate} value={this.state.diarydate}></input>
         </div>
         

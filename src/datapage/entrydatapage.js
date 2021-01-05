@@ -37,7 +37,7 @@ export default class EntryDatapage extends React.Component{
   }
   
   fetchDiary(){
-    console.log(this.diaryid)
+    
     fetch(`${config.API_ENDPOINT}/diaries/${this.diaryid}`, {
       method: 'GET',
       headers: {
@@ -136,7 +136,7 @@ export default class EntryDatapage extends React.Component{
     }
 
     handleSubmit = e => {
-      console.log(this.state)
+      
       e.preventDefault()
       const newDiary = {
         id: this.state.id,
@@ -181,7 +181,7 @@ export default class EntryDatapage extends React.Component{
         <div className="data-inputs">
        
         <div className="input-val-cal">
-        <label for="diarydate">Today's Date: </label>
+        <label htmlFor="diarydate">Today's Date: </label>
         <input type="date" id="diarydate" name="diarydate" onChange={this.handleChangeDate} value={this.state.diarydate}></input>
         </div>
         
