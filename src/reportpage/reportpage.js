@@ -31,8 +31,7 @@ export default class Reportpage extends React.Component{
       return res.json()
     })
     .then(diaries => {
-      this.setState({diaries: diaries }, 
-        () => window.print())
+      this.setState({diaries: diaries })
       
     })
     .catch(error => {
@@ -41,7 +40,10 @@ export default class Reportpage extends React.Component{
   
   }
 
-
+  handleOnClick(evt){
+    evt.preventDefault()
+    window.print()
+  }
   
   render (){
     return(
@@ -56,6 +58,7 @@ export default class Reportpage extends React.Component{
           <p>{diaries.other}</p>
         </div>
       ))}
+      <button onClick={this.handleOnClick}>Print Report</button>
     </div>
     );
   }
