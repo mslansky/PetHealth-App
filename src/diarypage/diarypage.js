@@ -78,8 +78,8 @@ export default class Diarypage extends React.Component{
       </div>
 
       <button><Link to={`/profilepage`}>Back to Pet Profiles</Link></button>
-
-
+      <button><Link to={`/datapage/${this.petname}`}>Create New Diary</Link></button>
+      <button><Link to={`/reportpage/${this.petname}`}>Generate Report</Link></button>
 
       {this.state.diaries.map((diaries, index) => (
       <div className="diary-card">

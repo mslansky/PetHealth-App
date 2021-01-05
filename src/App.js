@@ -7,6 +7,7 @@ import EntryDatapage from './datapage/entrydatapage.js'
 import Diarypage from './diarypage/diarypage.js'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import config from './config';
+import Reportpage from './reportpage/reportpage.js'
 
 
 export default class App extends React.Component{
@@ -101,7 +102,11 @@ export default class App extends React.Component{
         <Route path='/diarypage/:petname'
           component= {Diarypage}
         />
-          
+        
+        <Route path='/reportpage/:petname'
+        component={Reportpage}
+        />
+
 
         </Switch>
       </Router>
