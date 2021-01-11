@@ -110,6 +110,11 @@
   padding-right: 10px;
 }
 
+.three{
+  padding-left: 4px;
+  margin-left: 5px;
+}
+
 
 a{
   color:white;
@@ -153,7 +158,11 @@ a{
     font-family: 'Poppins', sans-serif;
     font-size: x-large;
     font-weight: 400;
-    width: 50%
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -166,10 +175,18 @@ a{
     width: 50%; ;
   }
 
+  .profile-add{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .profile-bubble{
     justify-content: center;
     display: flex;
-    
+    margin-left: auto;
+    margin-right: auto;
   }
   
 }
