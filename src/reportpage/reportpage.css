@@ -1,0 +1,17 @@
+.reportpage{
+  margin-left:20px;
+  margin-top: 20px;
+  margin-right:50px;
+  margin-bottom: 20px;
+}
+
+
+.report-list-diaries{
+  padding-top:5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}

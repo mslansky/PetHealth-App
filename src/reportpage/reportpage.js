@@ -50,15 +50,17 @@ export default class Reportpage extends React.Component{
     <div className= "reportpage">
       {this.state.diaries.map((diaries, index) => (
         <div className="report-list-diaries">
-          <p>{diaries.diarydate}</p>
-          <p>{diaries.medication}</p>
-          <p>{diaries.weight}</p>
-          <p>{diaries.allergies}</p>
-          <p>{diaries.body}</p>
-          <p>{diaries.other}</p>
+          <p key="diarydate">Diary Entry Date : {diaries.diarydate}</p>
+          <p key="content p">Content from Diary Entry for {diaries.name} :</p>
+          <p key="medication">{diaries.medication}</p>
+          <p key="weight">{diaries.weight}</p>
+          <p key="allergies">{diaries.allergies}</p>
+          <p key="body">{diaries.body}</p>
+          <p key="other">{diaries.other}</p>
         </div>
       ))}
       <button onClick={this.handleOnClick}>Print Report</button>
+      <button><Link to={`/profilepage`}>Back to Pet Profiles</Link></button>
     </div>
     );
   }

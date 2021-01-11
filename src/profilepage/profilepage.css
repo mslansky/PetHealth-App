@@ -7,6 +7,9 @@
 
 
 .profile-add{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: #413C3A
 }
 
@@ -102,6 +105,12 @@
   width: 100%
 }
 
+.profile-name{
+  padding: 2px;
+  padding-right: 10px;
+}
+
+
 a{
   color:white;
   text-decoration: none;
@@ -137,6 +146,8 @@ a{
   }
 
   .profile-bubble{
+    justify-content: center;
+    display: flex;
     padding: 5px;
     padding-left:10px;
     font-family: 'Poppins', sans-serif;
@@ -149,10 +160,17 @@ a{
 @media all and (min-width: 800px) {
 
   .backdrop-cat{
+    margin-left: auto;
+    margin-right: auto;
     height: 400px;
-    width:100% ;
+    width: 50%; ;
   }
 
+  .profile-bubble{
+    justify-content: center;
+    display: flex;
+    
+  }
   
 }
 
