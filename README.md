@@ -1,5 +1,5 @@
 Welcome to Pet Health Tracker! This application was designed with your best friend's health in mind.
-LINK TO LIVE APPLICATION:
+LINK TO LIVE APPLICATION: pet-health-app.mslansky.vercel.app
 
 
 
@@ -12,9 +12,12 @@ You can create a PET PROFILE for each of your pets! Within these profiles you ca
 This project was created as my first full stack application. This is the client side of the application which utilized React on the front end. Testing is implemented for all components. This was my first capstone project for the THINKFUL engineering immersion bootcamp. 
 
 
-Tech Stack Front End:
-Tech Stack Back End:
+Tech Stack Front End: React, JSX
+Tech Stack Back End: NodeJS, Express, Mocha, Chai
 
-Check out the Server Here:
+Check out the Server Here: 
+https://git.heroku.com/pethealthproject.git
+https://github.com/mslansky/pethealth-backend
+
 
 Screen Shots:
