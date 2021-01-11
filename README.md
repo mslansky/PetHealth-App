@@ -27,4 +27,5 @@ https://github.com/mslansky/pethealth-backend
 
 
 ## Screen Shots:
-landingpage.jpg
+![landingpage](https://user-images.githubusercontent.com/62613007/104239347-fec56200-541f-11eb-8709-4fdba18b137a.jpg)
+
