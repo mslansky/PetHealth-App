@@ -28,4 +28,8 @@ https://github.com/mslansky/pethealth-backend
 
 ## Screen Shots:
 ![landingpage](https://user-images.githubusercontent.com/62613007/104239347-fec56200-541f-11eb-8709-4fdba18b137a.jpg)
-
+![aboutpage](https://user-images.githubusercontent.com/62613007/104239457-27e5f280-5420-11eb-8334-5c597dff3d9a.jpg)
+![profilepage](https://user-images.githubusercontent.com/62613007/104239464-2a484c80-5420-11eb-9287-e4d549f2dbc2.jpg)
+![diarypage](https://user-images.githubusercontent.com/62613007/104239469-2c121000-5420-11eb-858c-ad66500dd2fc.jpg)
+![datapage](https://user-images.githubusercontent.com/62613007/104239476-2ddbd380-5420-11eb-9eeb-2eb19fbf727e.jpg)
+![reportpage](https://user-images.githubusercontent.com/62613007/104239481-2fa59700-5420-11eb-9e66-ace95eb69401.jpg)
