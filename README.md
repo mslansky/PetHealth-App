@@ -15,11 +15,14 @@ This project was created as my first full stack application. This is the client 
 
 ## Tech
 Tech Stack Front End: React, JSX
+
 Tech Stack Back End: NodeJS, Express, Mocha, Chai
 
 ## Backend
 Check out the Server Here: 
+
 https://git.heroku.com/pethealthproject.git
+
 https://github.com/mslansky/pethealth-backend
 
 
