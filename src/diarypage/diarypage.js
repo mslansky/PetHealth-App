@@ -84,7 +84,7 @@ export default class Diarypage extends React.Component{
       </div>
 
       {this.state.diaries.map((diaries, index) => (
-      <div className="diary-card">
+      <div className="diary-card" key={index}>
         <div className="card">
           <div className="card-body">
             <div className="card-content">

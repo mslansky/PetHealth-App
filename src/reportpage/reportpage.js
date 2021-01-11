@@ -49,7 +49,7 @@ export default class Reportpage extends React.Component{
     return(
     <div className= "reportpage">
       {this.state.diaries.map((diaries, index) => (
-        <div className="report-list-diaries">
+        <div className="report-list-diaries" key={index}>
           <p key="diarydate">Diary Entry Date : {diaries.diarydate}</p>
           <p key="content p">Content from Diary Entry for {diaries.name} :</p>
           <p key="medication">{diaries.medication}</p>

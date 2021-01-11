@@ -9,10 +9,11 @@
   background-color: white;
   opacity: .7;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
   font-size: xx-large; 
+  width:100%;
 }
 
 .about-paragraph{

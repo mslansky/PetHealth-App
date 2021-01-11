@@ -90,7 +90,7 @@ export default class Profilepage extends React.Component{
           
           <div className="profile-list">
           {this.state.profiles.reverse().map((profiles, index) => (
-            <div className="profile-bubble">
+            <div className="profile-bubble" key={index}>
               <img className="paw" src="https://img.icons8.com/ios-filled/50/000000/cat-footprint.png" alt="small paw print icon"/>
             <p className="profile-name">{profiles.name}</p>
             <div className="three">

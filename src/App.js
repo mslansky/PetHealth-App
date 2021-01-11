@@ -19,23 +19,19 @@ export default class App extends React.Component{
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/diaries`, { headers: {'Authorization': `Bearer ${config.API_TOKEN}`}}),
       fetch(`${config.API_ENDPOINT}/profiles`, { headers: {'Authorization': `Bearer ${config.API_TOKEN}`}})
     ])
-      .then(([diariesRes, profilesRes]) => {
-        if (!diariesRes.ok)
-          return diariesRes.json().then(e => Promise.reject(e))
+      .then(([profilesRes]) => {
         if (!profilesRes.ok)
           return profilesRes.json().then(e => Promise.reject(e))
 
         return Promise.all([
-          diariesRes.json(),
           profilesRes.json(),
         ])
       })
-      .then(([diaries, profiles]) => {
+      .then(([profiles]) => {
         console.log(profiles)
-        this.setState({ diaries, profiles })
+        this.setState({ profiles })
       })
       .catch(error => {
         console.error({ error })
@@ -83,7 +79,7 @@ export default class App extends React.Component{
             <ul>
               <li><Link to="/">PetHealth</Link></li>
               <li><Link to="/profilepage">Tracker</Link></li>
-              <li><Link to="/aboutpage">About</Link></li>
+              <li><Link to="/aboutpage" target="_blank">About</Link></li>
             </ul>
             <Navbar />
           </Route>
