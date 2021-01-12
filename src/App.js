@@ -8,7 +8,7 @@ import Diarypage from './diarypage/diarypage.js'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import config from './config';
 import Reportpage from './reportpage/reportpage.js'
-import Aboutpage from './aboutpage/aboutpage';
+
 
 
 export default class App extends React.Component{
@@ -79,13 +79,8 @@ export default class App extends React.Component{
             <ul>
               <li><Link to="/">PetHealth</Link></li>
               <li><Link to="/profilepage">Tracker</Link></li>
-              <li><Link to="/aboutpage" target="_blank">About</Link></li>
             </ul>
             <Navbar />
-          </Route>
-          
-          <Route path="/aboutpage">
-            <Aboutpage/>
           </Route>
 
           <Route path="/profilepage">
