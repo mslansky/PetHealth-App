@@ -30,7 +30,7 @@ export default class App extends React.Component{
         ])
       })
       .then(([profiles]) => {
-        console.log(profiles)
+      
         this.setState({ profiles })
       })
       .catch(error => {

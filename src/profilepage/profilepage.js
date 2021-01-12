@@ -26,7 +26,6 @@ export default class Profilepage extends React.Component{
         return response.json().then(e => Promise.reject(e))
       return response.json()
     }).then(profilesJson => {
-      console.log(profilesJson)
       this.setState(state => ({
         profiles: profilesJson
       }))
