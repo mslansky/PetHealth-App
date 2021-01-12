@@ -1,7 +1,7 @@
 import React from 'react';
 import './reportpage.css';
 import config from '../config';
-import {Link} from "react-router-dom";
+
 
 export default class Reportpage extends React.Component{
   constructor(props) {
@@ -60,7 +60,7 @@ export default class Reportpage extends React.Component{
         </div>
       ))}
       <button onClick={this.handleOnClick}>Print Report</button>
-      <button><Link to={`/profilepage`}>Back to Pet Profiles</Link></button>
+      
     </div>
     );
   }
